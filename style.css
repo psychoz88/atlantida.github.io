@@ -670,9 +670,3 @@ footer {
   left: 800px;
 }
 
-
-@media (max-width: 980px) {
-  .sidebar {
-    display: none;
-  }
-}
