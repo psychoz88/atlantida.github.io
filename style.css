@@ -1,0 +1,678 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+a {
+  text-decoration: none;
+}
+html {
+  background-color: #e3e3e3;
+}
+
+/*HEADER*/
+
+header {
+  /* Style for "Top Menu" */
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-logo {
+  /* Style for "Icon Logo" */
+  width: 41px;
+  height: 29px;
+  align-self: center;
+}
+
+.icon-text {
+  /* Style for "ATLANTIDA" */
+  width: 120px;
+  height: 14px;
+  color: #757575;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 50px;
+  text-transform: uppercase;
+  /* Text style for "ATLANTIDA" */
+  letter-spacing: 1.8px;
+  text-decoration: none;
+}
+
+nav {
+  color: #aaaaaa;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  width: 50vw;
+}
+
+/* ВЫПАДАЮЩИЕ ПОДМЕНЮ */
+nav ul li {
+  display: inline-block;
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+nav .submenu {
+  display: none;
+  background: rgba(131, 132, 135, 0.33);
+  width: 7vw;
+}
+nav ul li:hover .submenu {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+nav .submenu a:visited {
+  color: white;
+}
+/* end */
+
+nav ul li:last-child:after {
+  content: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  font-family: "Ubuntu Condensed", sans-serif;
+  position: relative;
+  transition: color 0.2s;
+}
+nav ul a,
+nav ul a:visited {
+  color: #aaaaaa;
+}
+nav ul a.current,
+nav ul a:hover {
+  color: #aaaaaa;
+}
+nav ul a:before,
+nav ul a:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  top: auto;
+  right: 50%;
+  bottom: -5px;
+  left: 50%;
+  background: #aaaaaa;
+  transition: 0.8s;
+}
+nav ul a:hover:before,
+nav ul .current:before {
+  left: 0;
+}
+nav ul a:hover:after,
+nav ul .current:after {
+  right: 0;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 4vw;
+}
+
+.fb {
+  /* Style for "Facebook" */
+  width: 11px;
+  height: 10px;
+  /*background-color: #a4a4a4;*/
+}
+
+.tw {
+  /* Style for "Tweter" */
+  width: 11px;
+  height: 9px;
+  /*background-color: #aaaaaa;*/
+}
+
+.be {
+  /* Style for "Behance" */
+  width: 16px;
+  height: 10px;
+  /*background-color: #a4a4a4;*/
+}
+
+/*SLIDER*/
+
+.slideshow-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.slider {
+  background-size: cover;
+  width: 100%;
+  height: 25vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slide1 {
+  background-image: url(pictures/slider-back.png);
+}
+.slide2 {
+  background-image: url(pictures/s2.jpg);
+}
+.slide3 {
+  background-image: url(pictures/s3.jpg);
+}
+.slide4 {
+  background-image: url(pictures/s4.jpg);
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dot {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dots:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-heading {
+  /* Style for "BLOG WITH" */
+  color: #ffffff;
+  font-family: Amsdam;
+  font-size: 36px;
+  font-weight: 400;
+  /* Text style for "BLOG WITH" */
+  letter-spacing: 0.89px;
+  text-decoration: none;
+}
+
+.wave {
+  /* Style for "Line /\/\/" */
+  width: 321px;
+  height: 5px;
+  margin-top: 10px;
+}
+
+.mini-nav {
+  /* Style for "Home > Blo" */
+  color: #ffffff;
+  font-family: "Crimson Text - Roman";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 50px;
+  /* Text style for "Home > Blo" */
+  letter-spacing: 1.4px;
+}
+
+/*MAINDIV*/
+
+.main-div {
+  margin: 50px 5px 50px 5px;
+  display: flex;
+  justify-content: center;
+}
+
+/*POSTS*/
+
+.posts {
+  background-color: #e3e3e3;
+  width: 60vw;
+  margin-right: 30px;
+}
+
+article {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  align-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.image-post {
+  width: 100%;
+}
+
+.heading-post {
+  /* Style for "Donec id l" */
+  margin: 30px 0 5px 0;
+  color: #3e3d3d;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+  /* Text style for "Donec id l" */
+  letter-spacing: 1.81px;
+}
+
+.by-post {
+  /* Style for "By Admin /" */
+  color: #3e3d3d;
+  font-family: "Crimson Text";
+  font-size: 14px;
+  line-height: 18px;
+  margin: 5px 0 10px 0;
+}
+
+.line1-post {
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
+
+.moreinfo-post {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+
+.msg-post {
+  margin: 0 8px 0 8px;
+}
+.msgnum-post {
+  /* Style for "Background" */
+  /* Style for "95" */
+  color: #818181;
+  font-family: "Crimson Text";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.seen-post {
+  margin: 0 8px 0 8px;
+}
+.seennum-post {
+  color: #818181;
+  font-family: "Crimson Text";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.bag-post {
+  margin: 0 8px 0 8px;
+}
+.bagtext-post {
+  color: #818181;
+  font-family: "Crimson Text";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.text-post {
+  /* Style for "Nullam lob" */
+  color: #3e3d3d;
+  font-family: "Crimson Text - Roman";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  /* Text style for "N, ullam l" */
+  letter-spacing: 1.4px;
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
+
+.more-read-post {
+  border: 2px solid #3e3d3d;
+  padding: 10px 15px 10px 15px;
+  /* Style for "Read More" */
+  color: #3e3d3d;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 400;
+  /* Text style for "Read More" */
+  letter-spacing: 1.47px;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+#pag {
+  margin: 0 3px 0 3px;
+  cursor: pointer;
+}
+
+/*SIDEBAR*/
+
+.sidebar {
+  margin-left: 10px;
+  width: 20vw;
+}
+
+.search {
+  position: relative;
+  margin: 0 auto;
+}
+
+.searchbutton {
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+}
+.searchbutton:before {
+  content: url("pictures/layer.png");
+}
+.searchquary {
+  padding: 10px;
+  border: 2px solid #a8a8a8;
+  width: 100%;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #e3e3e3;
+}
+
+.latest-posts-heading,
+.cate-heading,
+.arc-heading {
+  /* Style for "Latest POS" */
+  color: #3e3d3d;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  /* Text style for "Latest POS" */
+  letter-spacing: 1.81px;
+  margin: 30px 0 30px 0;
+}
+
+.last {
+  display: flex;
+}
+
+.last-texts {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.last-head-text {
+  /* Style for "sit amet p" */
+  color: #3e3d3d;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  font-weight: bold;
+  line-height: 15px;
+  /* Text style for "sit amet p" */
+  letter-spacing: 1.2px;
+}
+
+.last-text {
+  /* Style for "Nullam lob" */
+  color: #3e3d3d;
+  font-family: "Crimson Text";
+  font-size: 14px;
+  line-height: 25px;
+  /* Text style for "N, ullam l" */
+  letter-spacing: 1.4px;
+}
+
+.line2-last {
+  width: 100%;
+  margin: 30px 0 30px 0;
+}
+
+.categor,
+.arc {
+  /* Style for "Photograph" */
+  color: #3e3d3d;
+  font-family: "Crimson Text";
+  font-size: 16px;
+  list-style-image: url("pictures/flag.png");
+  font-style: italic;
+}
+
+.categor a {
+  color: #3e3d3d;
+}
+
+.arc a {
+  color: #3e3d3d;
+}
+
+.line3-last {
+  width: 100%;
+  margin: 20px 0 20px 0;
+}
+
+/*FOOTER*/
+
+footer {
+  background-image: url("pictures/bg-footer.png");
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  justify-content: center;
+}
+
+.logo-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 20px 28px;
+}
+
+.main-footer {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+.info-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0 10px 0;
+  width: 30vw;
+}
+
+.text-footer {
+  /* Style for "Lorem ipsu" */
+  color: #949494;
+  font-family: "Crimson Text - Roman";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.31px;
+  /* Text style for "L, orem ip" */
+  letter-spacing: 1.4px;
+  margin: 10px 0 10px 0;
+}
+
+.atlantida-studio {
+  /* Style for "ATLANTIDA" */
+  color: #e3e3e3;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+  /* Text style for "ATLANTIDA" */
+  letter-spacing: 1.47px;
+  margin: 10px 0 10px 0;
+}
+
+.adress {
+  /* Style for "Steven Ber" */
+  color: #949494;
+  font-family: "Crimson Text - Roman";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.31px;
+  /* Text style for "S, teven B" */
+  letter-spacing: 1.4px;
+  margin: 10px 0 10px 0;
+}
+
+.e-mail-org {
+  /* Style for "E-mail: el" */
+  color: #e3e3e3;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+  /* Text style for "E-mail: el" */
+  letter-spacing: 1.47px;
+  margin: 10px 0 10px 0;
+}
+
+.sendformdiv {
+  width: 60vw;
+}
+
+.sendform {
+  display: grid;
+  grid-template-columns: [first] 1fr [second] 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2vw;
+}
+
+.msg-form {
+  grid-column-start: span 2;
+}
+
+.texxt,
+.msg-form {
+  background: none;
+  padding: 10px;
+  border: 2px solid #464646;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 18px;
+  color: #949494;
+}
+
+.logo-footer p {
+  color: #e2e2e2;
+}
+
+.sub-button {
+  border: 2px solid #3e3d3d;
+  font-weight: 400;
+  letter-spacing: 1.47px;
+  cursor: pointer;
+  background-color: #464646;
+  color: #e3e3e3;
+  font-family: Montserrat;
+  font-size: 13px;
+  letter-spacing: 1.47px;
+  width: 135px;
+  height: 40px;
+  margin: 20px 0 0 10px;
+}
+
+.copyright {
+  color: #949494;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 1.4px;
+  font-style: italic;
+}
+
+.img-succes {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 80px;
+  left: 800px;
+}
+
+
+@media (max-width: 980px) {
+  .sidebar {
+    display: none;
+  }
+}
